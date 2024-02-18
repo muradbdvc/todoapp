@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 import Nav from './components/Nav.jsx'
+import Card from './components/Card.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,28 +12,16 @@ function App() {
 
   return (
     <div className="container mx-auto px-4">
-      {/* nav-menu */}
       <Nav title="Navbar" HomeMenu="  Home" />
+          <Card titleText="Call Mother" descText="This is dummy description text. This is dummy description text. This is dummy description text1." />
+          <Card titleText="Call Father" descText="This is dummy description text. This is dummy description text. This is dummy description text2."/>
+          <Card titleText="Call Sister" descText="This is dummy description text. This is dummy description text. This is dummy description text3."/>
+          <Card titleText="Call Son" descText="This is dummy description text. This is dummy description text. This is dummy description text4."/>
+          <Card titleText="Call Wife" descText="This is dummy description text. This is dummy description text. This is dummy description text5."/>
+          <Card titleText="Call Daughter" descText="This is dummy description text. This is dummy description text. This is dummy description text6."/>
     </div>
+
   )
 }
 
-
-function Card(){
-  const todoTitle = "Card Title";
-  const todoDesc = "Card Title Card Title Card Title Card Title Card TitleCard TitleCard Title Card TitleCard Title Card Title Card Title Card Title";
-  const date = new Date();
-  const dateName = date.getDate();
-  const monthName = date.getMonth();
-  const currentYear = date.getFullYear();
-
-  return(
-      <div className="card m-6 p-6">
-        <h3 className='cardTitle'>{todoTitle}</h3>
-        <p className='cardDesc'>{todoDesc}</p>
-        <p className='cardDate'>{dateName+ "/" + monthName+ "/" + currentYear}</p>
-      </div>
-  )
-}
-
-export default Card;
+export default App;
