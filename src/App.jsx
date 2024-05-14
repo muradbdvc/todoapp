@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-import Nav from './components/Nav.jsx'
+import NavMenu from './components/NavMenu/NavMenu.jsx'
 import Card from './components/Card.jsx'
 
 function App() {
@@ -12,13 +13,17 @@ function App() {
 
   return (
     <div className="container mx-auto px-4">
-      <Nav title="Navbar" HomeMenu="  Home" />
-          <Card titleText="Call Mother" descText="This is dummy description text. This is dummy description text. This is dummy description text1." />
-          <Card titleText="Call Father" descText="This is dummy description text. This is dummy description text. This is dummy description text2."/>
-          <Card titleText="Call Sister" descText="This is dummy description text. This is dummy description text. This is dummy description text3."/>
-          <Card titleText="Call Son" descText="This is dummy description text. This is dummy description text. This is dummy description text4."/>
-          <Card titleText="Call Wife" descText="This is dummy description text. This is dummy description text. This is dummy description text5."/>
-          <Card titleText="Call Daughter" descText="This is dummy description text. This is dummy description text. This is dummy description text6."/>
+
+      <BrowserRouter>
+        <NavMenu />
+        <Routes>
+          <Route path="#/" /> {/* 👈 Renders at /app/ */}
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/test" element={<test />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
     </div>
 
   )
