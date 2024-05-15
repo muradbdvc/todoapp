@@ -1,6 +1,6 @@
 import React from 'react'
 
- const navitem = [
+ const navitems = [
    {
     id:1,
     title:'Home',
@@ -23,25 +23,26 @@ import React from 'react'
     path:'/blog',
     cName:'navmenu'
   },
-  {  id:5,
-    title:'Test',
-    path:'/test',
-    cName:'navmenu'
-  }
+  // {  id:5,
+  //   title:'Test',
+  //   path:'/test',
+  //   cName:'navmenu'
+  // }
 ];
 
 const NavMenu = () => {
   return (
     <div>
         <nav className='navbar'>
-            <Link to='/' className='navbar-logo'>
-               <img src="Assets/Logo.png" alt="site logo" />Home
-            </Link>
+
             <ul id='navbar'>
                 {navitems.map(item=>{
                     const {id, path, title} = item;
                     return(
-                    <li key={id} className='item.cName'>
+                    <li key={id} className='cName'>
+                                  {/* <Link to={path} className='navbar-logo'>
+                                    <img src="Assets/Logo.png" alt="site logo" />Home
+                                  </Link> */}
                         <Link to={path}>
                             {title}
                         </Link>
